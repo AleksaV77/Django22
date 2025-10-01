@@ -1,0 +1,31 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "category_name": "Ноутбуки",
+        "category_description": "Ноутбуки"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "category_name": "Компьютеры",
+        "category_description": "Компьютеры"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "product_name": "Ноутбук",
+        "product_description": "HUAWEI MateBook D16",
+        "img": "",
+        "category": 1,
+        "price": 62000,
+        "created_at": "2025-10-01",
+        "updated_at": "2025-10-01"
+    }
+}
+]
