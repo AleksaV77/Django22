@@ -17,15 +17,54 @@
 },
 {
     "model": "catalog.product",
-    "pk": 1,
+    "pk": 9,
     "fields": {
-        "product_name": "Ноутбук",
-        "product_description": "HUAWEI MateBook D16",
-        "img": "",
+        "product_name": "HUAWEI MateBook D16",
+        "product_description": "2024/16\"/Core i5-13420H/16/512/Win/Space Gray (53013WXA)",
+        "img": "images/1.jpg",
         "category": 1,
         "price": 62000,
-        "created_at": "2025-10-01",
-        "updated_at": "2025-10-01"
+        "created_at": "2025-10-03",
+        "updated_at": "2025-10-03"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+        "product_name": "Apple MacBook Air 13",
+        "product_description": "M1 8/256 Space Gray (MGN63)",
+        "img": "images/2.jpg",
+        "category": 1,
+        "price": 70000,
+        "created_at": "2025-10-03",
+        "updated_at": "2025-10-03"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+        "product_name": "Системный блок игровой",
+        "product_description": "Thunderobot Warrior Super RL1 (i5-14400/16Gb/SSD1Tb/RTX4060/noOS)",
+        "img": "images/3.jpg",
+        "category": 2,
+        "price": 100000,
+        "created_at": "2025-10-03",
+        "updated_at": "2025-10-03"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+        "product_name": "Монитор игровой Samsung Odyssey",
+        "product_description": "G4 G40B S25BG400EI 25\"/IPS/1920x1080/240Гц/черный",
+        "img": "images/4.jpg",
+        "category": 2,
+        "price": 22500,
+        "created_at": "2025-10-03",
+        "updated_at": "2025-10-03"
     }
 }
 ]
