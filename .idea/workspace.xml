@@ -4,32 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e07ac14-3b40-460a-8a49-ceac5848c5da" name="Changes" comment="HomeWork 23">
-      <change afterPath="$PROJECT_DIR$/catalog/migrations/0002_alter_product_category_alter_product_img.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/catalog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/includes/inc_menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templatetags/my_tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/color-modes.js" afterDir="false" />
+    <list default="true" id="1e07ac14-3b40-460a-8a49-ceac5848c5da" name="Changes" comment="refactoring - catalog/urls.py: new controller&#10;refactoring - catalog/home.html: a general template that includes common page elements&#10;refactoring - config/settihgs: media settings&#10;&#10;new - media: added photos of products&#10;new - catalog/templatetags/my_tags.py: template filter&#10;new - includes/inc_menu.html: a sub-template for the main menu&#10;new - catalog/catalog.html: added a loop to the template&#10;new - catalog/product_detail.html: new template for displaying a page with detailed product information">
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/blogs_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/blogs_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/blogs_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/blog/blogs_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/management/commands/add_catalog.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/management/commands/add_catalog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/includes/inc_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/includes/inc_menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog_fixture.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalog_fixture.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/asgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +31,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature_23" />
+        <entry key="$PROJECT_DIR$" value="feature_24" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,14 +74,14 @@
     &quot;Python.views.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature__24&quot;
+    &quot;git-widget-placeholder&quot;: &quot;feature__25&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\PythonProject2\catalog\templates\catalog" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject2\catalog" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject2\catalog\templates" />
-      <recent name="C:\Users\user\PycharmProjects\PythonProject2\catalog\templates\catalog" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject2\catalog\templates\catalog\includes" />
     </key>
   </component>
@@ -192,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759311466743</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactoring - catalog/urls.py: new controller&#10;refactoring - catalog/home.html: a general template that includes common page elements&#10;refactoring - config/settihgs: media settings&#10;&#10;new - media: added photos of products&#10;new - catalog/templatetags/my_tags.py: template filter&#10;new - includes/inc_menu.html: a sub-template for the main menu&#10;new - catalog/catalog.html: added a loop to the template&#10;new - catalog/product_detail.html: new template for displaying a page with detailed product information">
+      <option name="closed" value="true" />
+      <created>1759594195627</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759594195627</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -200,6 +200,7 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="HomeWork 22" />
     <MESSAGE value="HomeWork 23" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomeWork 23" />
+    <MESSAGE value="refactoring - catalog/urls.py: new controller&#10;refactoring - catalog/home.html: a general template that includes common page elements&#10;refactoring - config/settihgs: media settings&#10;&#10;new - media: added photos of products&#10;new - catalog/templatetags/my_tags.py: template filter&#10;new - includes/inc_menu.html: a sub-template for the main menu&#10;new - catalog/catalog.html: added a loop to the template&#10;new - catalog/product_detail.html: new template for displaying a page with detailed product information" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring - catalog/urls.py: new controller&#10;refactoring - catalog/home.html: a general template that includes common page elements&#10;refactoring - config/settihgs: media settings&#10;&#10;new - media: added photos of products&#10;new - catalog/templatetags/my_tags.py: template filter&#10;new - includes/inc_menu.html: a sub-template for the main menu&#10;new - catalog/catalog.html: added a loop to the template&#10;new - catalog/product_detail.html: new template for displaying a page with detailed product information" />
   </component>
 </project>

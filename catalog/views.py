@@ -2,25 +2,18 @@ from itertools import product
 
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.views.generic import ListView, DetailView, TemplateView
 
 from catalog.models import Product
 
 
-def home(request):
-    products = Product.objects.all()
-    context = {"products": products}
-    return render(request, "catalog/catalog.html", context)
+class ProductListView(ListView):
+    model = Product
 
 
-def contacts(request):
-    if request.method == "POST":
-        name = request.POST.get("name")
-        message = request.POST.get("message")
-        return HttpResponse(f"Спасибо, {name}! Сообщение получено.")
-    return render(request, "catalog/contacts.html")
+class ProductDetailView(DetailView):
+    model = Product
 
 
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    context = {"product": product}
-    return render(request, "catalog/product_detail.html", context)
+class ContactsView(TemplateView):
+    template_name = "catalog/contacts.html"

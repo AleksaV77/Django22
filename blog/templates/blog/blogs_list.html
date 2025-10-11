@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for blogs in object_list %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ blogs.image.url }}" style="max-width: 100%; height: 270px;">
+                    <div class="card-body">
+                        <p class="card-text">{{ blogs.title }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'blog:blogs_detail' blogs.pk %}" class="btn btn-primary my-2">Посмотреть</a>
+                                <a href="{% url 'blog:blogs_update' blogs.pk %}" class="btn btn-secondary my-2">Редактировать</a>
+                                <a href="{% url 'blog:blogs_delete' blogs.pk %}" class="btn btn-secondary my-2">Удалить</a>
+                            </div>
+                            <img src="/media/free-icon-eye-158746.png" style="max-width: 5%; height: 15px;">
+                            <small class="text-body-secondary">{{ blogs.view_counter }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

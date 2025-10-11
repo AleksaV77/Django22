@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ blogs.image | media_filter }}">
+                    <div class="card-body">
+                        <p class="card-text">{{ object.title }}</p>
+                        <p class="card-text">{{ object.blogs_description }}</p>
+                        <p class="card-text">Публикация: {{ object.published }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="ms-5">
+                                <a href="{% url 'blog:blogs_list' %}" class="btn btn-secondary my-2" role="button">Назад</a>
+                            </div>
+                            <p class="text-body-secondary">Дата создания: {{ object.created_at|date:"d M Y" }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
