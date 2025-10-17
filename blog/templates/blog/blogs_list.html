@@ -7,7 +7,7 @@
             {% for blogs in object_list %}
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="{{ blogs.image.url }}" style="max-width: 100%; height: 270px;">
+                    <img src="{{ blogs.image | media_filter }}" style="max-width: 100%; height: 270px;">
                     <div class="card-body">
                         <p class="card-text">{{ blogs.title }}</p>
                         <div class="d-flex justify-content-between align-items-center">
