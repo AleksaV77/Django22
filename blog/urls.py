@@ -1,8 +1,14 @@
 from django.urls import path
 from . import views
-from .views import BlogsListView, BlogsCreateView, BlogsDetailView, BlogsUpdateView, BlogsDeleteView
+from .views import (
+    BlogsListView,
+    BlogsCreateView,
+    BlogsDetailView,
+    BlogsUpdateView,
+    BlogsDeleteView,
+)
 
-app_name = 'blog'
+app_name = "blog"
 
 urlpatterns = [
     path("blogs_list/", BlogsListView.as_view(), name="blogs_list"),
