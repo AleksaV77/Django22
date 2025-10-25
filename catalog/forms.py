@@ -8,25 +8,38 @@ from catalog.models import Product
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        exclude = ('created_at', 'updated_at')
+        exclude = ("created_at", "updated_at", "owner")
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ("unpublish_product",)
 
     words = [
-        "казино", "криптовалюта", "крипта", "биржа",
-        "дешево", "бесплатно", "обман", "полиция", "радар"
+        "казино",
+        "криптовалюта",
+        "крипта",
+        "биржа",
+        "дешево",
+        "бесплатно",
+        "обман",
+        "полиция",
+        "радар",
     ]
 
     def clean_product_name(self):
-        product_name = self.cleaned_data.get('product_name')
+        product_name = self.cleaned_data.get("product_name")
         for word in self.words:
             if word.lower() in product_name.lower():
-                raise ValidationError(f'Слово {word} нельзя использовать')
+                raise ValidationError(f"Слово {word} нельзя использовать")
         return product_name
 
     def clean_product_description(self):
-        product_description = self.cleaned_data.get('product_description')
+        product_description = self.cleaned_data.get("product_description")
         for word in self.words:
             if word.lower() in product_description.lower():
-                raise ValidationError(f'Слово {word} нельзя использовать')
+                raise ValidationError(f"Слово {word} нельзя использовать")
         return product_description
 
     def clean_price(self):
@@ -38,8 +51,6 @@ class ProductForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
-            field.widget.attrs.update({
-                "class": "form-control",
-                "placeholder": field.label
-            })
-            
+            field.widget.attrs.update(
+                {"class": "form-control", "placeholder": field.label}
+            )

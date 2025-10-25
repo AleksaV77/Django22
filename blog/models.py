@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Blogs(models.Model):
     title = models.CharField(max_length=50, verbose_name="заголовок")
     blogs_description = models.CharField(max_length=250, verbose_name="содержимое")
