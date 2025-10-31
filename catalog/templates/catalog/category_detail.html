@@ -1,0 +1,23 @@
+{% extends 'catalog/home.html' %}
+{% load my_tags %}
+{% block title %} Поиск по категориям {% endblock %}
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for product in all_products %}
+        <div class="col">
+          <div class="card shadow-sm" >
+            <img src = "{{product.img | media_filter }}" class="card-img-top" alt={{product.product_name}} height = 300>
+            <div class="card-body">
+              <h5 class="card-title">{{product.product_name}}</h5>
+              <p class="card-text">{{product.product_description|truncatechars:100|default:"Описание отсутствует"}}</p>
+            </div>
+              <a class="btn btn-primary my-2" href="{% url 'catalog:product_detail' product.pk %}" role="button">Посмотреть</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+{% endblock %}

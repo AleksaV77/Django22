@@ -1,0 +1,19 @@
+{% extends 'catalog/home.html' %}
+{% load my_tags %}
+{% block title %}Категории{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Категории</h2>
+    <ul class="list-group">
+        {% for category in category_list %}
+        <li class="list-group-item">
+            <a href="{% url 'catalog:category_detail' category.pk %}" class="btn btn-primary">{{ category.category_name }}</a>
+            <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:home' %}" role="button">Назад</a>
+         </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
