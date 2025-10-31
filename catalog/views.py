@@ -16,16 +16,26 @@ from django.views.generic import (
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from catalog.forms import ProductForm, ProductModeratorForm
-from catalog.models import Product
+from catalog.models import Product, Category
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
+
+from config.settings import CACHE_ENABLED
+from .services import CategoryServices, get_products_from_cache
 
 
+@method_decorator(cache_page(60), name='dispatch')
 class ProductListView(ListView):
     model = Product
 
     def get_queryset(self):
-        return Product.objects.filter(unpublish_product=True)
+        if CACHE_ENABLED:
+            return get_products_from_cache()
+        else:
+            return Product.objects.filter(unpublish_product=True)
 
 
+@method_decorator(cache_page(60), name='dispatch')
 class ProductDetailView(DetailView):
     model = Product
 
@@ -70,3 +80,25 @@ class ProductDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView)
 
 class ContactsView(TemplateView):
     template_name = "catalog/contacts.html"
+
+
+@method_decorator(cache_page(60), name='dispatch')
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'category_list.html'
+    context_object_name = 'category_list'
+
+@method_decorator(cache_page(60), name='dispatch')
+class CategoryDetailView(DetailView):
+    model = Category
+    template_name = "catalog/category_detail.html"
+    context_object_name = "category_detail"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category_id = self.kwargs.get('pk')
+        context['category_id'] = category_id
+        context['category_name'] = CategoryServices.get_category_name(category_id)
+        context['all_products'] = CategoryServices.get_all_products_in_category(category_id)
+        return context
+

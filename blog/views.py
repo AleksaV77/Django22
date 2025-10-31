@@ -9,11 +9,14 @@ from django.views.generic import (
     DeleteView,
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
 
 from blog.forms import BlogsForm
 from blog.models import Blogs
 
 
+@method_decorator(cache_page(60), name='dispatch')
 class BlogsListView(ListView):
     model = Blogs
     template_name = "blog/blogs_list.html"
@@ -23,6 +26,7 @@ class BlogsListView(ListView):
         return Blogs.objects.filter(published=True)
 
 
+@method_decorator(cache_page(60), name='dispatch')
 class BlogsDetailView(DetailView):
     model = Blogs
 
